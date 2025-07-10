@@ -1,8 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-import { CreateRoom } from './pages/create-room/create-room';
-import { Room } from './pages/create-room/room';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/home/home';
+import { Room } from './pages/room/room';
+import { Rooms } from './pages/rooms/rooms';
 
 export function App() {
 	const queryCLient = new QueryClient();
@@ -12,8 +12,8 @@ export function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route element={<Home />} index />
-					<Route element={<CreateRoom />} path="/create-room" />
-					<Route element={<Room />} path="/room/:id" />
+					<Route element={<Rooms />} path="/rooms" />
+					<Route element={<Room />} path="/rooms/:id" />
 				</Routes>
 			</BrowserRouter>
 		</QueryClientProvider>
