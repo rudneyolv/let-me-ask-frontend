@@ -15,7 +15,7 @@ import { dayjs } from '@/lib/dayjs';
 import { RoomsListStyles } from './rooms-list-styles';
 
 export function RoomsList() {
-	const { data, isLoading } = useFetchRooms();
+	const { data, isLoading, error } = useFetchRooms();
 	const { data: rooms } = data ?? {};
 
 	if (isLoading) {
@@ -24,6 +24,14 @@ export function RoomsList() {
 				<Loader2 className="m-auto size-6 animate-spin" />
 				<p className="animate-pulse">Carregando salas</p>
 			</div>
+		);
+	}
+
+	if (error) {
+		return (
+			<p className="text-destructive">
+				{error.message || 'Erro ao carregar salas'}
+			</p>
 		);
 	}
 

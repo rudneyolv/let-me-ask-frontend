@@ -13,7 +13,7 @@ export function App() {
 				<Routes>
 					<Route element={<Home />} index />
 					<Route element={<Rooms />} path="/rooms" />
-					<Route element={<Room />} path="/rooms/:id" />
+					<Route element={<Room />} path="/rooms/:room_id" />
 				</Routes>
 			</BrowserRouter>
 		</QueryClientProvider>
